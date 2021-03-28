@@ -6,6 +6,7 @@ const checkoutPage = function() {
     mainContainer.innerHTML = '';
     checkoutText = document.createElement('p');
     checkoutText.textContent = 'Transaction Completed!';
+    checkoutText.id = 'checkoutText';
     mainContainer.appendChild(checkoutText);
 };
 
@@ -49,6 +50,7 @@ const checkout = function() {
     };
         checkoutPrice = document.createElement('p');
         checkoutPrice.textContent = 'Total Price: ' + '$' + totalPrice;
+        checkoutPrice.id = 'checkoutPrice';
         mainContainer.appendChild(checkoutPrice);
         
     let checkoutButton = document.createElement('button');
