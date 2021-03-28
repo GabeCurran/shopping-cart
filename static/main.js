@@ -1,5 +1,6 @@
 let mainContainer = document.querySelector('#mainContainer');
 let totalPrice = 0;
+let subtotal = 0;
 
 const checkoutPage = function() {
     mainContainer.innerHTML = '';
@@ -112,9 +113,25 @@ const showItems = function() {
     };
 };
 
+const showTotal = function() {
+    let subtotalTitle = document.createElement('p');
+    subtotalTitle.textContent = 'Subtotal:';
+    
+    let subtotal = document.createElement('p');
+    subtotal.id = 'subtotal';
+    subtotal.textContent = '$0';
+    
+    mainContainer.appendChild(subtotalTitle);
+    mainContainer.appendChild(subtotal);
+}
+
 const addToCartButton = function(event) {
+    
     let parentDiv = event.target.parentElement;
     itemNumber = parentDiv.id;
+    subtotal += itemList[itemNumber].price;
+    document.querySelector('#subtotal').textContent = '$' + subtotal;
+    
     
     cart.push(itemNumber);
 };
@@ -125,16 +142,17 @@ const appendItemToList = function(name, price, itemNumber) {
     
     let item = document.createElement('p');
     item.textContent = name + ' $' + price;
+    
     itemDiv.appendChild(item);
     itemDiv.id = itemNumber;
     
-    let input = document.createElement('input');
-    input.textContent = 'Add To Cart';
-    input.type = 'button';
+    let button = document.createElement('button');
+    button.textContent = 'Add To Cart';
+    button.type = 'button';
     
-    input.addEventListener('click', addToCartButton)
+    button.addEventListener('click', addToCartButton)
     
-    itemDiv.appendChild(input);
+    itemDiv.appendChild(button);
     
     mainContainer.appendChild(itemDiv);
 };
@@ -144,4 +162,5 @@ const appendItemToCart = function(item) {
 };
 
 showItems();
+showTotal();
 mainContainer.appendChild(goToCheckoutButton);
