@@ -39,7 +39,7 @@ const checkout = function() {
         itemName.textContent = itemList[i].name;
         
         let itemAmount = document.createElement('p');
-        itemAmount.textContent = count;
+        itemAmount.textContent = 'x' + count;
         
         itemAmountDiv.appendChild(itemName);
         itemAmountDiv.appendChild(itemAmount);
@@ -116,6 +116,7 @@ const showItems = function() {
 const showTotal = function() {
     let subtotalTitle = document.createElement('p');
     subtotalTitle.textContent = 'Subtotal:';
+    subtotalTitle.id = 'subtotalTitle';
     
     let subtotal = document.createElement('p');
     subtotal.id = 'subtotal';
@@ -140,10 +141,16 @@ const appendItemToList = function(name, price, itemNumber) {
     
     let itemDiv = document.createElement('div');
     
-    let item = document.createElement('p');
-    item.textContent = name + ' $' + price;
+    let itemName = document.createElement('p');
+    itemName.textContent = name;
+    itemName.className = 'fruit';
     
-    itemDiv.appendChild(item);
+    let itemPrice = document.createElement('p');
+    itemPrice.textContent = '$' + price;
+    itemPrice.className = 'price';
+    
+    itemDiv.appendChild(itemPrice);
+    itemDiv.appendChild(itemName);
     itemDiv.id = itemNumber;
     
     let button = document.createElement('button');
