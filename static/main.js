@@ -4,7 +4,7 @@ let totalPrice = 0;
 const checkoutPage = function() {
     mainContainer.innerHTML = '';
     checkoutText = document.createElement('p');
-    checkoutText.textContent = 'nice';
+    checkoutText.textContent = 'Transaction Completed!';
     mainContainer.appendChild(checkoutText);
 };
 
