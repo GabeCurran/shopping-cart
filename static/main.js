@@ -48,7 +48,7 @@ const checkout = function() {
         
     };
         checkoutPrice = document.createElement('p');
-        checkoutPrice.textContent = 'Total Price: ' + totalPrice;
+        checkoutPrice.textContent = 'Total Price: ' + '$' + totalPrice;
         mainContainer.appendChild(checkoutPrice);
         
     let checkoutButton = document.createElement('button');
