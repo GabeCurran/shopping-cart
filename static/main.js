@@ -22,7 +22,6 @@ const checkout = function() {
                 uniqueArray.push(i);
         };
     };
-    console.log(uniqueArray);
     
     for (let i of uniqueArray) {
 //        i = fruit
