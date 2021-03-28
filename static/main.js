@@ -1,6 +1,13 @@
 let mainContainer = document.querySelector('#mainContainer');
 let totalPrice = 0;
 
+const checkoutPage = function() {
+    mainContainer.innerHTML = '';
+    checkoutText = document.createElement('p');
+    checkoutText.textContent = 'nice';
+    mainContainer.appendChild(checkoutText);
+};
+
 const checkout = function() {
     
     mainContainer.innerHTML = '';
