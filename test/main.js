@@ -172,4 +172,3 @@ const appendItemToCart = function(item) {
 showItems();
 showTotal();
 mainContainer.appendChild(goToCheckoutButton);
-    
