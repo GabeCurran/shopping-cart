@@ -77,7 +77,7 @@ button {
 }
 
 #mainContainer > div {
-    background-color: darkgray;
+    background-color: #91232C;
     width: 30vw;
     min-width: 300px;
     display: flex;
@@ -85,7 +85,7 @@ button {
     align-items: center;
     justify-content: space-between;
     padding: 20px 20px 20px 20px;
-    border-bottom: 1px solid;
+    border-bottom: 1px darkgray solid;
 }
 
 #mainContainer > div > button {
